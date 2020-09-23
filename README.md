@@ -25,6 +25,15 @@ Run this command to install python environment using [conda](https://docs.conda.
 source scripts/install_deps.sh
 ```
 
+On Windows, run install.bat as admin and then add the glfw binary directory to your PATH variable (most likely in C:\Program Files (x86)\GLFW\bin).
+Then close and reopen your CMD prompt.
+
+Remember to activate your conda environment using
+```bash
+conda activate npbg
+```
+before working with this repositry.
+
 ## Run
 
 You can render one of the fitted scenes we provide right away in the real-time viewer or fit your own scene.

@@ -6,6 +6,12 @@ import torch
 from npbg.utils.train import get_module, save_model, load_model_checkpoint
 from npbg.utils.arguments import deval_args
 
+import pathlib
+import platform
+
+# this is a hack
+if platform.system() == "Windows":
+    pathlib.PosixPath = pathlib.WindowsPath
 
 class Pipeline:
     def export_args(self, parser):
