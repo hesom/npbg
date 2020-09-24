@@ -78,7 +78,8 @@ def get_screen_program(texture):
 
 def start_fps_job():
     def job():
-        print(f'FPS {app.clock.get_fps():.1f}')
+        while not app.stopped.wait(1.0):
+            print(f'FPS {app.clock.get_fps():.1f}')
 
     threading.Timer(1.0, job).start()
 
@@ -238,6 +239,7 @@ class MyApp():
         self.last_gt_image = None
 
         self.mouse_pressed = False
+        app.stopped = threading.Event()
 
         self.args = args
 
@@ -246,6 +248,7 @@ class MyApp():
             start_fps_job()
 
         app.run()
+        app.stopped.set()
 
     def render_frame(self, view_matrix):
         self.scene.set_camera_view(view_matrix)
@@ -433,4 +436,3 @@ if __name__ == '__main__':
 
     my_app = MyApp(args)
     my_app.run()
-
