@@ -1,4 +1,4 @@
-paths_file: configs/paths_example.yaml
+paths_file: configs/livingroom_iclnuim.yaml
 dataset_names: []
 
 batch_size: 8

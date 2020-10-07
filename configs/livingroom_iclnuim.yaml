@@ -1,0 +1,7 @@
+datasets:
+    "livingroom_iclnuim":
+        scene_path: home/sommerhoff/projects/npbg/downloads/livingroom_iclnuim.yaml
+        target_path: home/sommerhoff/projects/npbg/downloads/images/livingroom_iclnuim
+        target_name_func: "lambda i: f'{int(i):05d}.jpg'"
+        # mask_path: masks_undistorted
+        # mask_name_func: "lambda i: f'{i}.png'"
